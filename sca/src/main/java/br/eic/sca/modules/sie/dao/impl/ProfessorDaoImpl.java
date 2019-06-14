@@ -62,7 +62,10 @@ public class ProfessorDaoImpl extends _DaoSieAbstract<Professor> implements Prof
 		long timestamp = System.currentTimeMillis();
 		
 		// Corrige o path se necessário
-		if (!siefolderPath.endsWith("\\"))
+		// Checa primeiro se é um path em um sistema Unix
+		if (siefolderPath.contains("/") && !siefolderPath.endsWith("/"))
+			siefolderPath=siefolderPath+"/";
+		else if (!siefolderPath.endsWith("\\"))
 			siefolderPath=siefolderPath+"\\";
 		
 		File dir = new File(siefolderPath + "11.02.03.99.19 - Ofertas de Disciplinas");

@@ -67,7 +67,10 @@ public class TurmaDaoImpl extends _DaoSieAbstract<Turma> implements TurmaDao
 		TreeSet<String> loggedErrors = new TreeSet<String>();
 		
 		// Corrige o path se necessário
-		if (!siefolderPath.endsWith("\\"))
+		// Checa primeiro se é um path em um sistema Unix
+		if (siefolderPath.contains("/") && !siefolderPath.endsWith("/"))
+			siefolderPath=siefolderPath+"/";
+		else if (!siefolderPath.endsWith("\\"))
 			siefolderPath=siefolderPath+"\\";
 		
 		//
