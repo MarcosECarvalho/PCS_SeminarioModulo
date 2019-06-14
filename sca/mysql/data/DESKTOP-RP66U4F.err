@@ -1,0 +1,47 @@
+2019-06-14T02:44:32.033131Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 8232
+2019-06-14T02:44:32.033339Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T02:44:33.863520Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-06-14T02:44:33.865187Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-06-14T02:44:36.048453Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T02:44:36.112894Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Unknown error
+2019-06-14T02:44:36.113619Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-06-14T02:44:36.114745Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-06-14T02:44:41.164863Z 0 [System] [MY-010910] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.12)  MySQL Community Server - GPL.
+2019-06-14T02:52:02.486133Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 7728
+2019-06-14T02:52:02.486276Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T02:52:06.280307Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T02:52:06.283716Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Unknown error
+2019-06-14T02:52:06.284393Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-06-14T02:52:06.285135Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-06-14T02:52:08.443333Z 0 [System] [MY-010910] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.12)  MySQL Community Server - GPL.
+2019-06-14T02:53:13.860681Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 6084
+2019-06-14T02:53:13.860962Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T02:53:18.820185Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T02:53:18.824094Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Unknown error
+2019-06-14T02:53:18.824779Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-06-14T02:53:18.825523Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-06-14T02:53:20.972325Z 0 [System] [MY-010910] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.12)  MySQL Community Server - GPL.
+2019-06-14T02:58:49.844392Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 7152
+2019-06-14T02:58:49.844527Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T02:58:55.810566Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T02:58:56.966388Z 0 [System] [MY-010931] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2019-06-14T17:16:06.513843Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 5792
+2019-06-14T17:16:06.513981Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T17:16:08.688453Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-06-14T17:16:08.689907Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-06-14T17:16:09.979936Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T17:16:10.015167Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Unknown error
+2019-06-14T17:16:10.015800Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-06-14T17:16:10.016565Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-06-14T17:16:12.419577Z 0 [System] [MY-010910] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.12)  MySQL Community Server - GPL.
+2019-06-14T17:17:55.587912Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 2800
+2019-06-14T17:17:55.588048Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T17:17:58.544827Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T17:17:58.548220Z 0 [ERROR] [MY-010262] [Server] Can't start server: Bind on TCP/IP port: Unknown error
+2019-06-14T17:17:58.548873Z 0 [ERROR] [MY-010257] [Server] Do you already have another mysqld server running on port: 3306 ?
+2019-06-14T17:17:58.549590Z 0 [ERROR] [MY-010119] [Server] Aborting
+2019-06-14T17:17:59.736329Z 0 [System] [MY-010910] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: Shutdown complete (mysqld 8.0.12)  MySQL Community Server - GPL.
+2019-06-14T17:19:27.650596Z 0 [System] [MY-010116] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 10760
+2019-06-14T17:19:27.650726Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-14T17:19:30.467757Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-14T17:19:30.753816Z 0 [System] [MY-010931] [Server] C:\Dev\CEFET\PCS\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
