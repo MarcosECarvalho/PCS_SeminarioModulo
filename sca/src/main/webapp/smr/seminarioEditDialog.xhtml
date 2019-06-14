@@ -1,0 +1,68 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_templateDialog.xhtml">
+
+<ui:define name="dialogContent">
+	
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{SeminarioBean}" />
+	
+	<p:dialog id="seminarioEditDialog" widgetVar="seminarioEditDialog"
+			  width="520" resizable="false" modal="true" hideEffect="drop" 
+			  position="center center" header="Seminario">
+				  
+		<h:form id="seminarioEditDialogForm">
+			<h:panelGrid columns="2" cellpadding="4">
+				<p:outputLabel value="Titulo *" />
+				<p:inputText value="#{bean.seminarioEditable.titulo}"
+				             required="true" 
+				             requiredMessage="O título é obrigatório" />
+				             
+				<p:outputLabel value="Local *" />
+				<p:inputText value="#{bean.seminarioEditable.local}" 
+							 required="true" 
+							 requiredMessage="O local é obrigatório." />
+							 
+				
+				<p:outputLabel value="Data *" />
+       			 <p:datePicker id="popup" value="#{bean.seminarioEditable.data}" />	
+				             
+				<p:outputLabel value="Hora Início *" />
+				<p:inputMask mask="99:99" value="#{bean.seminarioEditable.horaInicio}"
+							 required="true" requiredMessage="A hora de início é obrigatória." 
+							 converter="#{localTimeConverter}" converterMessage="Hora de início inválida." />
+				             
+				<p:outputLabel value="Hora Fim *" />
+	            <p:inputMask mask="99:99" value="#{bean.seminarioEditable.horaFim}" 
+	            			 required="true" requiredMessage="A hora de fim é obrigatória." 
+	            			 converter="#{localTimeConverter}" converterMessage="Hora de término inválida." />
+				
+			</h:panelGrid>
+		
+			<p:panel style="margin-top:3px; border-width: 0px;">
+				<p:outputPanel style="text-align:right; margin-top:7px;">
+                    <p:commandButton actionListener="#{bean.persist()}" 
+                                     icon="ui-icon ui-icon-disk" value="Salvar" class="salvarBtn" 
+                                     update="pageForm,seminarioEditDialogForm,messages" />
+                </p:outputPanel>
+			</p:panel>
+		
+		</h:form>			 
+		
+	</p:dialog>
+
+</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+
