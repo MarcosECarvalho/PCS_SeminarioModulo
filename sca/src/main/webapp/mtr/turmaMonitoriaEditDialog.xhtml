@@ -1,0 +1,77 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_templateDialog.xhtml">
+
+<ui:define name="dialogContent">
+
+	<!-- Importa ENUM dos Dias Da Semana -->
+	<p:importEnum type="java.time.DayOfWeek" var="dayOfWeek" allSuffix="ALL_ENUM_VALUES" />
+	
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{turmaMonitoriaBean}" />
+	
+	<p:dialog id="turmaMonitoriaEditDialog" widgetVar="turmaMonitoriaEditDialog"
+			  width="520" resizable="false" modal="true" hideEffect="drop" 
+			  position="center center" header="Turma de Monitoria">
+				  
+		<h:form id="turmaMonitoriaEditDialogForm">
+			<h:panelGrid columns="2" cellpadding="4">
+				<p:outputLabel value="Disciplina *" />
+				<p:inputText value="#{bean.turmaEditable.disciplina}"
+				             required="true" 
+				             requiredMessage="A disciplina é obrigatória" />
+				             
+				<p:outputLabel value="Local *" />
+				<p:inputText value="#{bean.turmaEditable.local}" 
+							 required="true" 
+							 requiredMessage="O local é obrigatório." />
+							 
+				<p:outputLabel value="Dia da Semana *"/>
+				<p:selectOneMenu value="#{bean.turmaEditable.diaDaSemana}">
+					<f:selectItem itemLabel="Segunda" itemValue="#{dayOfWeek.MONDAY}"/>
+					<f:selectItem itemLabel="Terça"   itemValue="#{dayOfWeek.TUESDAY}"/>
+					<f:selectItem itemLabel="Quarta"  itemValue="#{dayOfWeek.WEDNESDAY}" />
+					<f:selectItem itemLabel="Quinta"  itemValue="#{dayOfWeek.THURSDAY}" />
+					<f:selectItem itemLabel="Sexta"   itemValue="#{dayOfWeek.FRIDAY}"/>
+					<f:selectItem itemLabel="Sábado"  itemValue="#{dayOfWeek.SATURDAY}"/>	
+				</p:selectOneMenu>
+				             
+				<p:outputLabel value="Hora Início *" />
+				<p:inputMask mask="99:99" value="#{bean.turmaEditable.horaInicio}"
+							 required="true" requiredMessage="A hora de início é obrigatória." 
+							 converter="#{localTimeConverter}" converterMessage="Hora de início inválida." />
+				             
+				<p:outputLabel value="Hora Fim *" />
+	            <p:inputMask mask="99:99" value="#{bean.turmaEditable.horaFim}" 
+	            			 required="true" requiredMessage="A hora de fim é obrigatória." 
+	            			 converter="#{localTimeConverter}" converterMessage="Hora de término inválida." />
+				
+			</h:panelGrid>
+		
+			<p:panel style="margin-top:3px; border-width: 0px;">
+				<p:outputPanel style="text-align:right; margin-top:7px;">
+                    <p:commandButton actionListener="#{bean.persist()}" 
+                                     icon="ui-icon ui-icon-disk" value="Salvar" class="salvarBtn" 
+                                     update="pageForm,turmaMonitoriaEditDialogForm,messages" />
+                </p:outputPanel>
+			</p:panel>
+		
+		</h:form>			 
+		
+	</p:dialog>
+
+</ui:define>
+</ui:composition>
+
+
+
+
+
+
+
+
+

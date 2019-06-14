@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_templateDialog.xhtml">
+
+<ui:define name="dialogContent">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{alunoBean}" />
+	
+	<!-- ========================== -->
+	<!-- DIÁLOGO DE INSERÇÃO/EDIÇÃO -->
+	<!-- ========================== -->
+    <p:dialog id="alunosHistoricoDialog" widgetVar="alunosHistoricoDialog" 
+    		  header="Histórico Escolar" width="650" height="400" 
+    		  hideEffect="drop" modal="true" position="center center">
+        <h:form id="alunosHistoricoDialogForm">
+
+			<p:dataTable id="alunosHistoricoTable" var="inscricao" 
+					 value="#{bean.inscricoes}" sortBy="#{inscricao.id}" 
+					 sortOrder="ascending">
+														
+				<p:column style="width:30%" sortBy="#{inscricao.turma.disciplina.nome}" headerText="Disciplina">
+					<p:outputPanel style="text-align:center">
+						<h:outputText value="#{inscricao.turma.disciplina.nome}" />
+					</p:outputPanel>
+				</p:column>				
+				
+				<p:column style="width:15%" sortBy="#{inscricao.turma.ano}" headerText="Ano">
+					<h:outputText value="#{inscricao.turma.ano}" />
+				</p:column>		
+				
+				<p:column style="width:15%" sortBy="#{inscricao.turma.semestre}" headerText="Semestre">
+					<h:outputText value="#{inscricao.turma.semestre}" />
+				</p:column>	
+				
+				<p:column style="width:40%" sortBy="#{inscricao.situacao}" headerText="Situação">
+					<h:outputText value="#{inscricao.situacao}" />
+				</p:column>	
+							
+			</p:dataTable>		        
+	    </h:form>
+	</p:dialog>		
+</ui:define>
+</ui:composition>

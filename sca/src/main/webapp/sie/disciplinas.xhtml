@@ -1,0 +1,113 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_template.xhtml">
+
+<ui:define name="content">
+<h:form id="pageForm">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{disciplinaBean}" />
+
+	<!-- =================== -->
+	<!-- FILTROS DA CONSULTA -->
+	<!-- =================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:fieldset legend="Filtros">
+			<h:panelGrid columns="11" cellpadding="5" cellspacing="5">
+				<h:outputText value="Nome: " />
+				<p:inputText value="#{bean.filtroNome}" size="25" />
+				<h:outputText value="Código: " />
+				<p:inputText value="#{bean.filtroCodigo}" size="10" />
+				<h:outputText value="Período: " />
+				<p:inputMask value="#{bean.filtroPeriodo}" mask="?9" size="5" />
+				<h:outputText value="Curso: " />
+				<p:autoComplete value="#{bean.filtroVersaoCurso}" size="20" dropdown="true" forceSelection="true" 
+								completeMethod="#{bean.completeCurso}" converter="#{versaoCursoLabelConverter}"
+								var="vc" itemValue="#{vc}" itemLabel="#{vc.label}" />
+		        <h:outputText value="Optativa: " />
+		        <p:selectOneMenu value="#{bean.filtroOptativa}">
+					<f:selectItem itemLabel="Qualquer" itemValue="0" />
+					<f:selectItem itemLabel="Sim" itemValue="1" />
+					<f:selectItem itemLabel="Não" itemValue="2" />			
+		        </p:selectOneMenu>
+				<p:commandButton actionListener="#{bean.retrieve()}" icon="ui-icon ui-icon-search" value="Buscar" update="table,messages" />
+			</h:panelGrid>
+		</p:fieldset>
+	</p:panel>
+
+	<!-- ====================== -->
+	<!-- RESULTADOS DA CONSULTA -->
+	<!-- ====================== -->	
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:outputPanel style="text-align:right;">										
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/excel_small.png" />
+				<p:dataExporter type="xls" target="table" fileName="export" encoding="UTF-8" />
+				(Excel)
+			</h:commandLink>											
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/pdf_small.png" />
+				<p:dataExporter type="pdf" target="table" fileName="export" encoding="UTF-8" />
+				(PDF)
+			</h:commandLink>
+		</p:outputPanel>
+
+		<p:dataTable id="table" var="entity" value="#{bean.entities}" sortBy="#{entity.nome}" sortOrder="ascending"
+					 paginator="true" paginatorAlwaysVisible="true" rows="15" paginatorPosition="bottom"
+					 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+	
+			<f:facet name="header">					
+				<p:outputPanel style="text-align:left">
+					<h:outputText value="Disciplinas SIE (#{bean.totalEntities} registros)" />
+				</p:outputPanel>								
+			</f:facet>			
+			
+			<p:column style="width:10%" sortBy="#{entity.versaoCurso.versao}" headerText="Curso">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.versaoCurso.curso.sigla}" /> - <h:outputText value="#{entity.versaoCurso.versao}" />
+				</p:outputPanel>
+			</p:column>											
+							
+			<p:column style="width:10%" sortBy="#{entity.codigo}" headerText="Código">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.codigo}" />
+				</p:outputPanel>
+			</p:column>	
+							
+			<p:column style="width:40%" sortBy="#{entity.nome}" headerText="Nome">
+				<h:outputText value="#{entity.nome}" />
+			</p:column>	
+																
+			<p:column style="width:10%" sortBy="#{entity.periodo}" headerText="Período">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.periodo}" />
+				</p:outputPanel>
+			</p:column>	
+			
+			<p:column style="width:10%" sortBy="#{entity.creditos}" headerText="Créditos">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.creditos}" />
+				</p:outputPanel>
+			</p:column>			
+			
+			<p:column style="width:10%" sortBy="#{entity.cargaHoraria}" headerText="C.H.">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.cargaHoraria}" />
+				</p:outputPanel>
+			</p:column>	
+			
+			<p:column style="width:10%" sortBy="#{entity.optativa}" headerText="Optativa">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.optativa ? 'SIM' : 'NÃO'} " />
+				</p:outputPanel>
+			</p:column>																								
+		</p:dataTable>
+	</p:panel>
+
+</h:form>
+</ui:define>
+</ui:composition>

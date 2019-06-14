@@ -1,0 +1,118 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:pe="http://primefaces.org/ui/extensions" 
+				template="../_template.xhtml">
+
+<ui:define name="content">
+<h:form id="pageForm">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{turmaBean}" />
+
+	<!-- =================== -->
+	<!-- FILTROS DA CONSULTA -->
+	<!-- =================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:fieldset legend="Filtros">
+			<h:panelGrid columns="13" cellpadding="5" cellspacing="5">
+				<h:outputText value="Nome: " />
+				<p:inputText value="#{bean.filtroNome}" size="25" />							
+				<h:outputText value="Código Turma: " />
+				<p:inputMask value="#{bean.filtroCodTurm}" mask="?999999" size="8" />							
+				<h:outputText value="Código Disciplina: " />
+				<p:inputText value="#{bean.filtroCodDisc}" size="6" />	
+				<h:outputText value="Ano: " />
+				<p:inputMask value="#{bean.filtroAno}" mask="?2099" size="5" />
+				<h:outputText value="Semestre: " />
+				<p:inputMask value="#{bean.filtroSemestre}" mask="?9" size="5" />		
+				<h:outputText value="Curso: " />
+				<p:autoComplete value="#{bean.filtroVersaoCurso}" size="20" dropdown="true" forceSelection="true" 
+								completeMethod="#{bean.completeCurso}" converter="#{versaoCursoLabelConverter}"
+								var="vc" itemValue="#{vc}" itemLabel="#{vc.label}" />					
+				<p:commandButton actionListener="#{bean.retrieve()}" icon="ui-icon ui-icon-search" value="Buscar" update="table,messages" />
+			</h:panelGrid>
+		</p:fieldset>
+	</p:panel>
+	
+	<!-- ====================== -->
+	<!-- RESULTADOS DA CONSULTA -->
+	<!-- ====================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">			
+		<p:outputPanel style="text-align:right;">										
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/excel_small.png" />
+				<p:dataExporter type="xls" target="table" fileName="export" encoding="UTF-8" />
+				(Excel)
+			</h:commandLink>											
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/pdf_small.png" />
+				<p:dataExporter type="pdf" target="table" fileName="export" encoding="UTF-8" />
+				(PDF)
+			</h:commandLink>
+		</p:outputPanel>
+		
+		<p:dataTable id="table" var="entity" value="#{bean.entities}" sortBy="#{entity}" sortOrder="ascending"
+					 paginator="true" paginatorAlwaysVisible="true" rows="15" paginatorPosition="bottom"
+					 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+			<f:facet name="header">					
+				<p:outputPanel style="text-align:left">
+					<h:outputText value="Turmas SIE (#{bean.totalEntities} registros)" />
+				</p:outputPanel>								
+			</f:facet>
+			
+			<p:column style="width:10%" sortBy="#{entity.codigo}" headerText="Turma">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.codigo}" />
+				</p:outputPanel>
+			</p:column>					
+													
+			<p:column style="width:10%" sortBy="#{entity.disciplina.versaoCurso}" headerText="Curso">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.disciplina.versaoCurso.label}" />
+				</p:outputPanel>
+			</p:column>
+			
+			<p:column style="width:10%" sortBy="#{entity.disciplina.codigo}" headerText="Cód. Disc.">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.disciplina.codigo}" />
+				</p:outputPanel>
+			</p:column>
+			
+			<p:column style="width:35%" sortBy="#{entity.disciplina.nome}" headerText="Nome Disc.">
+				<h:outputText value="#{entity.disciplina.nome}" />
+			</p:column>	
+				
+			<p:column style="width:10%" sortBy="#{entity.anoSemestre}" headerText="Semestre">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.anoSemestre}" />
+				</p:outputPanel>
+			</p:column>
+			
+			<p:column style="width:25%" sortBy="#{entity.nomeProfessor}" headerText="Professor">
+				<h:outputText value="#{entity.nomeProfessor}" />
+			</p:column>
+			
+			<p:column style="width:5%">
+				<p:outputPanel style="text-align:center">
+					<p:commandButton  actionListener="#{bean.listaAlunos(entity)}"
+									  icon="ui-icon  ui-icon-folder-open" 
+									  update="pageForm,messages"/>
+									  
+				</p:outputPanel>
+			</p:column>																					
+		</p:dataTable>
+	</p:panel>
+
+
+<!-- ================================ -->
+<!-- INCLUI DIÁLOGO DE CRIAÇÃO/EDIÇÃO -->
+<!-- ================================ -->
+<ui:include src="./turmasAlunosDialog.xhtml" />
+
+</h:form>
+</ui:define>
+</ui:composition>

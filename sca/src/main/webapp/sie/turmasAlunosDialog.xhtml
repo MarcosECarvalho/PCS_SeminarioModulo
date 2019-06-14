@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_templateDialog.xhtml">
+
+<ui:define name="dialogContent">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{turmaBean}" />
+	
+	<!-- ========================== -->
+	<!-- DIÁLOGO DE INSERÇÃO/EDIÇÃO -->
+	<!-- ========================== -->
+    <p:dialog id="turmaAlunosDialog" widgetVar="turmaAlunosDialog" 
+    		  header="Alunos da Turma" width="650" height="400" 
+    		  hideEffect="drop" modal="true" position="center center">
+        <h:form id="turmaAlunosDialogForm">
+
+			<p:dataTable id="turmaAlunosTable" var="aluno" 
+					 value="#{bean.alunos}" sortBy="#{aluno.nome}" 
+					 sortOrder="ascending">
+					  
+				<f:facet name="header">					
+					<h:outputText value="Alunos da Turma" />				 							
+				</f:facet>				
+														
+				<p:column style="width:30%" sortBy="#{aluno.matricula}" headerText="Matrícula">
+					<p:outputPanel style="text-align:center">
+						<h:outputText value="#{aluno.matricula}" />
+					</p:outputPanel>
+				</p:column>				
+				
+				<p:column style="width:70%" sortBy="#{aluno.nome}" headerText="Nome">
+					<h:outputText value="#{aluno.nome}" />
+				</p:column>					
+			</p:dataTable>		        
+	    </h:form>
+	</p:dialog>		
+</ui:define>
+</ui:composition>

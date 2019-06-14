@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+           http://www.springframework.org/schema/tx 
+           http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.0.xsd
+           http://www.springframework.org/schema/security 
+           http://www.springframework.org/schema/security/spring-security-4.0.xsd
+           http://www.springframework.org/schema/lang 
+           http://www.springframework.org/schema/lang/spring-lang-4.0.xsd
+           http://www.springframework.org/schema/aop 
+     	   http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<!-- ====================================== -->
+	<!-- Arquivos de Propriedades 				-->
+	<!-- ====================================== -->
+	<context:property-placeholder location="classpath:sca.properties"/>
+	
+	<!-- ====================================== -->
+	<!-- Habilita Aspectos e Transações		    -->													
+	<!-- ====================================== -->
+	<context:annotation-config />
+	<aop:aspectj-autoproxy/>
+	<tx:annotation-driven />	
+	
+	<!-- ====================================== -->
+	<!-- Componentes			 				-->
+	<!-- ====================================== -->
+	<context:component-scan base-package="br.eic.sca.*" use-default-filters="false" >
+		<context:include-filter type="assignable" expression="br.eic.sca.api.ScaModule"/>
+	</context:component-scan>			
+			
+	<!-- ====================================== -->
+	<!-- Camada de Dados		 				-->
+	<!-- ====================================== -->
+	<bean name="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+  		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>				
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.transaction.auto_close_session">true</prop>
+				<prop key="hibernate.id.new_generator_mappings">false</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop> -->
+				<!-- <prop key="hibernate.hbm2ddl.auto">create-drop</prop>  -->
+			</props>
+		</property>
+		<property name="packagesToScan">
+			<list>
+				<value>br.eic.sca.modules</value>				
+			</list>
+	    </property>
+	</bean>
+		
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+	     <property name="driverClassName" value="com.mysql.jdbc.Driver" /> 
+	     <property name="url" value="jdbc:mysql://localhost:3306/sca?useSSL=false" /> 
+	     <property name="username" value="root" /> 
+	     <property name="password" value="root" />	 	
+	     <property name="initialSize" value="3" />
+	     <property name="maxTotal" value="10" />
+	     
+	</bean>		
+
+</beans>

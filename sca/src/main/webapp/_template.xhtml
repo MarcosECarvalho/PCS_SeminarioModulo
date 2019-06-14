@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pe="http://primefaces.org/ui/extensions">
+
+<f:event listener="#{sessionBean.preRender()}" type="preRenderView" />
+
+<f:view contentType="text/html">
+	<h:head>					
+		<h:outputStylesheet name="main.css" />
+		<script src="_resources/js/geral.js"></script>	
+	</h:head>
+	
+	<h:body>
+		<p:growl id="messages" />
+		
+		<div class="header">
+			<div class="header__user">
+				<span>Bem vindo, </span><span style="font-style: italic;"><h:outputText value="#{sessionBean.alias}"/></span>
+			</div>
+			<div class="header__title">
+				<a href="#{request.contextPath}/index.jsf">SCA</a>
+			</div>
+			<div class="header__logout">
+				<h:form id="logoutForm">
+					<p:commandLink action="#{loginBean.logout}" ajax="false" value="Sair &#8690;" style="font-size: large" />
+				</h:form>
+			</div>
+		</div>
+		<div class="subheader">
+			<span><h:outputText value="#{sessionBean.roles}"/></span>
+		</div>
+					
+		<h:form id="menuForm">
+			<p:menubar model="#{sessionBean.menu}" />	 
+		</h:form>													
+					
+		<div class="main" style="min-height: 800px;">			
+			<div class="content">
+				<ui:insert name="content" />				
+			</div>			
+		</div>
+
+		<div class="footer">
+			<div class="footer__text">CastaWare Solutions - Todos os Direitos Reservados - 2018</div>
+		</div>								
+	</h:body>
+</f:view>
+</html>

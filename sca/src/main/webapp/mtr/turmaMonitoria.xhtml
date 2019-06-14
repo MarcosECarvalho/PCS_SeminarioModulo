@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_template.xhtml">
+
+<ui:define name="content">
+<h:form id="pageForm">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{turmaMonitoriaBean}" />
+	
+	<p:panel style="margin-top:8px; border-width: 0px;">
+	
+		<p:dataTable id="table" var="turma" value="#{bean.turmas}" sortBy="#{turma.disciplina}" sortOrder="ascending"
+					 paginator="true" paginatorAlwaysVisible="true" rows="15" paginatorPosition="bottom" 
+					 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+	
+			<f:facet name="header">
+				<p:outputPanel id="TEST" style="text-align:left; float:left;  margin:0px; display:flex; align-items:center;">
+					<h:outputLabel value="Turmas de Monitoria" />
+				</p:outputPanel>
+				<p:outputPanel style="text-align:right">
+					<p:commandButton actionListener="#{bean.create()}"
+									 value="Adicionar" 
+									 icon="ui-icon ui-icon-plusthick" 
+									 update="turmaMonitoriaEditDialog" />
+				</p:outputPanel>
+			</f:facet>
+			
+			<p:column style="width:30%" headerText="Disciplina" sortBy="#{turma.disciplina}">
+				<h:outputText value="#{turma.disciplina}" />
+			</p:column>
+			<p:column style="width:15%" headerText="Local" sortBy="#{turma.local}">
+				<h:outputText value="#{turma.local}" />
+			</p:column>
+			<p:column style="width:15%" headerText="Dia da Semana" sortBy="#{turma.diaDaSemana}">
+				<h:outputText value="#{turma.diaDaSemanaPtBr}" />
+			</p:column>
+			<p:column style="width:15%" headerText="Hora Início" sortBy="#{turma.horaInicio}">
+				<h:outputText value="#{turma.horaInicio}" />
+			</p:column>
+			<p:column style="width:15%" headerText="Hora Fim" sortBy="#{turma.horaFim}">
+				<h:outputText value="#{turma.horaFim}" />
+			</p:column>
+			<p:column style="width:5%">
+				<p:commandButton actionListener="#{bean.update(turma)}" 
+								 icon="ui-icon ui-icon-pencil" 
+								 update="turmaMonitoriaEditDialog" />
+			</p:column>
+			<p:column style="width:5%">
+				<p:commandButton actionListener="#{bean.delete(turma)}" 
+								 icon="ui-icon ui-icon-trash" 
+								 update="pageForm"
+								 onclick="if (!confirm('Você deseja remover o item selecionado?')) return false;"  />
+			</p:column>
+		</p:dataTable>
+	</p:panel>
+</h:form>
+
+<!-- ================================ -->
+<!-- INCLUI DIÁLOGO DE CRIAÇÃO/EDIÇÃO -->
+<!-- ================================ -->
+<ui:include src="./turmaMonitoriaEditDialog.xhtml" />
+
+</ui:define>
+</ui:composition>
+
+
+
+

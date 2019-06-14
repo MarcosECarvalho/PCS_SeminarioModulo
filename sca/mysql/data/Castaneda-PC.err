@@ -1,0 +1,88 @@
+2018-10-11T14:42:36.993395Z 0 [System] [MY-013169] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) initializing of server in progress as process 4824
+2018-10-11T14:43:07.653050Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: tMufoO7/f)uN
+2018-10-11T14:43:24.078679Z 0 [System] [MY-013170] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) initializing of server has completed
+2018-10-11T14:43:49.846528Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T14:43:49.846528Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5488
+2018-10-11T14:44:01.062855Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T14:44:01.716456Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T14:47:49.740873Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T14:47:49.740873Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 4888
+2018-10-11T14:47:58.528688Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T14:47:58.528688Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T14:47:59.963891Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T14:48:00.260291Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:13:19.042039Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:13:19.042039Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5908
+2018-10-11T15:13:27.216454Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:13:27.216454Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:13:28.667256Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:13:29.072857Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:17:15.136732Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:17:15.136732Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5724
+2018-10-11T15:17:23.872558Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:17:23.872558Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:17:25.323361Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:17:25.713361Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:18:02.131127Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:18:02.131127Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 4300
+2018-10-11T15:18:11.916556Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:18:11.916556Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:18:13.414159Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:18:13.975760Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:21:59.664184Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:21:59.664184Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5204
+2018-10-11T15:22:47.057290Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:22:47.057290Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 7036
+2018-10-11T15:22:56.367558Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:22:56.368558Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:22:57.831361Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:22:58.080962Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:23:30.736469Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:23:30.736469Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5988
+2018-10-11T15:23:39.177084Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:23:39.177084Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:23:40.627887Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:23:41.735489Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:23:41.735489Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 6572
+2018-10-11T15:23:50.369505Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:23:50.369505Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:23:51.879908Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:23:52.176308Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:24:25.886796Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:24:25.886796Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 5308
+2018-10-11T15:24:33.969011Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:24:33.969011Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:24:35.388614Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:24:35.841014Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:25:39.034930Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:25:39.034930Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 7116
+2018-10-11T15:25:39.034930Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-10-11T15:25:47.590746Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:25:47.590746Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:25:49.150949Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:25:49.369349Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:36:52.039719Z 0 [ERROR] [MY-010083] [Server] --verbose is for use with --help; did you mean --log-error-verbosity?
+2018-10-11T15:36:52.039719Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 4512
+2018-10-11T15:36:52.039719Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-10-11T15:37:00.593534Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:37:00.593534Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:37:01.981936Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:37:02.059936Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:42:58.787726Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 7128
+2018-10-11T15:42:58.788726Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-10-11T15:43:06.196150Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:43:06.196150Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:43:07.632232Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:43:07.725238Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T15:51:43.107716Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 1924
+2018-10-11T15:51:43.107716Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-10-11T15:51:50.642147Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T15:51:50.644147Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T15:51:52.080229Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T15:51:52.188235Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
+2018-10-11T16:00:44.367674Z 0 [System] [MY-010116] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe (mysqld 8.0.12) starting as process 4264
+2018-10-11T16:00:44.367674Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2018-10-11T16:00:52.041113Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2018-10-11T16:00:52.043113Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2018-10-11T16:00:53.484196Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2018-10-11T16:00:53.602202Z 0 [System] [MY-010931] [Server] C:\Users\Castaneda\Downloads\mysql-8.0.12-winx64\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.

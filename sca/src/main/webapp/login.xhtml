@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pe="http://primefaces.org/ui/extensions">
+
+<f:event listener="#{sessionBean.preRender()}" type="preRenderView" />
+
+<f:view contentType="text/html">
+	<h:head>			
+		<h:outputStylesheet name="main.css" />
+		<style>
+			div.ui-growl {
+			   left: 0;
+			   right: 0;
+			   margin-left: 5px;
+			   margin-top: 245px;
+			}
+		</style>				
+	</h:head>
+	
+	<h:body>
+		<p:growl id="messages" life="7000" />
+		<div class="header">
+			<div class="header__user">
+				<span class="header__user__welcome"></span>
+			</div>
+			<div class="header__title">
+				<span><a href="#{request.contextPath}/index.jsf">SCA</a></span>
+			</div>
+			<div class="header__logout">
+				<span></span>
+			</div>
+		</div>
+		<div class="subheader">
+			<span>Login</span>
+		</div> 
+		
+		<div class="main" style="min-height: 800px;">			
+			<h:form>            				
+		        <h:panelGrid columns="2" cellpadding="5">
+		            <h:outputLabel value="Usuário:" />
+		            <p:inputText value="#{loginBean.username}" required="true" requiredMessage="O preenchimento do nome de usuário é obrigatório" />
+		 
+		            <h:outputLabel value="Senha:" />
+		            <p:password value="#{loginBean.password}" required="true" requiredMessage="O preenchimento da senha é obrigatório" />
+		 
+		            <f:facet name="footer">
+		                <p:commandButton value="Login" update="messages" ajax="false" action="#{loginBean.login}" />
+		            </f:facet>  
+		        </h:panelGrid>				        			   
+			</h:form>						 						
+		</div>
+
+		<div class="footer">
+			<div class="footer__text">Todos os direitos reservados - 2017</div>
+		</div>				
+	</h:body>
+</f:view>
+</html>

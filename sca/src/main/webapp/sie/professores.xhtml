@@ -1,0 +1,75 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_template.xhtml">
+
+<ui:define name="content">
+<h:form id="pageForm">
+	
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{professorBean}" />
+	
+	<!-- =================== -->
+	<!-- FILTROS DA CONSULTA -->
+	<!-- =================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:fieldset legend="Filtros">
+			<h:panelGrid columns="5" cellpadding="5" cellspacing="5">		
+				<h:outputText value="Nome: " />
+				<p:inputText value="#{bean.filtroNome}" size="30" />							
+				<h:outputText value="Matricula: " />
+				<p:inputMask value="#{bean.filtroMatr}" mask="?9999999" size="10" />							
+				<p:commandButton actionListener="#{bean.retrieve()}" icon="ui-icon ui-icon-search" value="Buscar" update="table,messages"  />
+			</h:panelGrid>
+		</p:fieldset>
+	</p:panel>
+
+	<!-- ====================== -->
+	<!-- RESULTADOS DA CONSULTA -->
+	<!-- ====================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:outputPanel style="text-align:right;">
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/excel_small.png" />
+				<p:dataExporter type="xls" target="table" fileName="export" encoding="UTF-8" />
+				(Excel)
+			</h:commandLink>											
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/pdf_small.png" />
+				<p:dataExporter type="pdf" target="table" fileName="export" encoding="UTF-8" />
+				(PDF)
+			</h:commandLink>
+		</p:outputPanel>
+	
+		<p:dataTable id="table" var="entity" value="#{bean.entities}" sortBy="#{entity.nome}" sortOrder="ascending"
+					 paginator="true" paginatorAlwaysVisible="true" rows="15" paginatorPosition="bottom"
+					 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+
+			<f:facet name="header">					
+				<p:outputPanel style="text-align:left">
+					<h:outputText value="Professores SIE (#{bean.totalEntities} registros)" />
+				</p:outputPanel> 								
+			</f:facet>				
+													
+			<p:column style="width:20%" sortBy="#{entity.matricula}" headerText="Matrícula">
+				<p:outputPanel style="text-align:center">
+					<h:outputText value="#{entity.matricula}" />
+				</p:outputPanel>
+			</p:column>			
+			
+			<p:column style="width:60%" sortBy="#{entity.nome}" headerText="Nome">
+				<h:outputText value="#{entity.nome}" />
+			</p:column>
+			
+			<p:column style="width:20%" sortBy="#{entity.cursos}" headerText="Cursos">
+				<h:outputText value="#{entity.cursos}" />
+			</p:column>	
+		</p:dataTable>
+	</p:panel>
+
+</h:form>
+</ui:define>
+</ui:composition>

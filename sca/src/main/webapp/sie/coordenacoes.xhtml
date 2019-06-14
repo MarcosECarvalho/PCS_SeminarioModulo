@@ -1,0 +1,82 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui" 
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_template.xhtml">
+
+<ui:define name="content">
+<h:form id="pageForm">
+	
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{coordenacaoBean}" />
+
+	<!-- =================== -->
+	<!-- FILTROS DA CONSULTA -->
+	<!-- =================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">
+		<p:fieldset legend="Filtros">
+			<h:panelGrid columns="3" cellpadding="5" cellspacing="5">
+				<h:outputText value="Curso: " />
+				<p:selectOneMenu value="#{bean.filtroCursoId}">
+					<f:selectItem itemLabel="Todos" itemValue="0" />
+		            <f:selectItems value="#{bean.filtroCursoOpcoes}" var="obj" itemLabel="#{obj.sigla}" itemValue="#{obj.id}"  />
+		        </p:selectOneMenu>									
+				<p:commandButton actionListener="#{bean.retrieve()}" icon="ui-icon ui-icon-search" value="Buscar" update="coordEditDialog,messages" />
+			</h:panelGrid>
+		</p:fieldset>
+	</p:panel>
+	
+	<!-- ====================== -->
+	<!-- RESULTADOS DA CONSULTA -->
+	<!-- ====================== -->
+	<p:panel style="margin-top:8px; border-width: 0px;">			
+		<p:outputPanel style="text-align:right;">										
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/excel_small.png" />
+				<p:dataExporter type="xls" target="grid" fileName="export" encoding="UTF-8" />
+				(Excel)
+			</h:commandLink>											
+			<h:commandLink>
+				<p:graphicImage value="/_resources/images/pdf_small.png" />
+				<p:dataExporter type="pdf" target="grid" fileName="export" encoding="UTF-8" />
+				(PDF)
+			</h:commandLink>
+		</p:outputPanel>
+						
+		<p:dataGrid id="grid" var="entity" value="#{bean.entities}" columns="4" layout="grid"
+					 paginator="true" paginatorAlwaysVisible="true" rows="15" paginatorPosition="bottom" 
+					 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+					 rowsPerPageTemplate="16" style="width:100%">
+			
+			<f:facet name="header">
+				<p:outputPanel style="text-align:left; float: left">
+					<h:outputText value="Coordenações de Curso (#{bean.totalEntities} registros)" />
+				</p:outputPanel>
+				<p:outputPanel style="text-align:right">
+					<p:commandButton actionListener="#{bean.create()}" icon="ui-icon ui-icon-plusthick" value="Nova Coordenação" 
+						 		 	 update="coordEditDialog" />
+				</p:outputPanel>		
+			</f:facet>				
+			
+			<p:panel header="#{entity.curso.sigla}" style="text-align:center;width:100%">
+	            <h:panelGrid columns="1" style="width:100%">
+	                <p:outputLabel value="#{entity.professor.nome}" />
+	                <p:outputLabel value="(#{entity.curso.nome})" style="font-style: italic;" />
+	 
+	 				<p:commandButton actionListener="#{bean.delete(entity)}" icon="ui-icon ui-icon-trash"  
+	 								 update="coordEditDialog,messages,grid" />			        	
+	            </h:panelGrid>
+	        </p:panel>																									
+		</p:dataGrid>		
+	</p:panel>
+</h:form>
+				
+<!-- ================================ -->
+<!-- INCLUI DIÁLOGO DE CRIAÇÃO/EDIÇÃO -->
+<!-- ================================ -->
+<ui:include src="./coordenacoesEditDialog.xhtml"></ui:include>
+	
+</ui:define>
+</ui:composition>

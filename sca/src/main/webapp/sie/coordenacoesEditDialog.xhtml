@@ -1,0 +1,48 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui"
+				xmlns:pe="http://primefaces.org/ui/extensions"
+				template="../_templateDialog.xhtml">
+
+<ui:define name="dialogContent">
+
+	<!-- Simplifica o nome do Bean principal da página -->
+	<ui:param name="bean" value="#{coordenacaoBean}" />
+
+	<!-- ========================== -->
+	<!-- DIÁLOGO DE INSERÇÃO/EDIÇÃO -->
+	<!-- ========================== -->
+	<p:dialog id="coordEditDialog" widgetVar="coordEditDialog" header="Nova Coordenação" 
+    		  resizable="false" width="600" hideEffect="drop" modal="true" 
+    		  position="center center">
+		<h:form id="coordEditDialogForm">
+	    	<h:panelGrid columns="2" cellpadding="4">
+				<p:outputLabel value="Cursos Disponíveis: " />
+				<p:selectOneMenu value="#{bean.filtroDialogCursoId}">
+					<f:selectItems value="#{bean.cursosDisponiveis}"	var="obj" itemLabel="#{obj.sigla}" itemValue="#{obj.id}" />
+				</p:selectOneMenu>
+			
+				<p:outputLabel value="Professor (Matr. ou Nome): " />
+				<p:inputText value="#{bean.filtroDialogProfessorNomeMatr}">					
+					<p:ajax event="keyup" update="professoresDisponiveisList" listener="#{bean.filterProfessores}" />
+				</p:inputText>
+			</h:panelGrid>
+			
+			<p:dataList id="professoresDisponiveisList" value="#{bean.professoresDisponiveis}" 
+						var="prof" type="unordered" itemType="none" paginator="true" rows="10" 
+						styleClass="paginated">					
+				<f:facet name="header">
+		        	Professores Disponíveis
+	    		</f:facet>			
+				<p:commandButton actionListener="#{bean.persist(prof)}" icon="ui-icon ui-icon-check" 
+								 update="coordEditDialog,messages,pageForm:grid">
+					<f:attribute name="prof" value="#{prof}" />
+				</p:commandButton>
+				<h:outputText value="#{prof.nome}" style="display:inline-block" />
+			</p:dataList>
+		</h:form>		
+    </p:dialog>
+</ui:define>
+</ui:composition>
