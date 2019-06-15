@@ -36,8 +36,8 @@
 			<p:column style="width:15%" headerText="Local" sortBy="#{seminario.local}">
 				<h:outputText value="#{seminario.local}" />
 			</p:column>
-			<p:column style="width:15%" headerText="Dia da Semana" sortBy="#{seminario.diaDaSemana}">
-				<h:outputText value="#{seminario.diaDaSemanaPtBr}" />
+			<p:column style="width:15%" headerText="Data" sortBy="#{seminario.data}">
+				<h:outputText value="#{seminario.data}" />
 			</p:column>
 			<p:column style="width:15%" headerText="Hora Início" sortBy="#{seminario.horaInicio}">
 				<h:outputText value="#{seminario.horaInicio}" />
@@ -48,7 +48,7 @@
 			<p:column style="width:5%">
 				<p:commandButton actionListener="#{bean.update(seminario)}" 
 								 icon="ui-icon ui-icon-pencil" 
-								 update="turmaMonitoriaEditDialog" />
+								 update="seminarioEditDialog" />
 			</p:column>
 			<p:column style="width:5%">
 				<p:commandButton actionListener="#{bean.delete(seminario)}" 
