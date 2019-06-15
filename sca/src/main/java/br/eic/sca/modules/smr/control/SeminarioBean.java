@@ -100,19 +100,19 @@ public class SeminarioBean extends _Bean
 	//
 	// Métodos de Acesso
 	//
-	public List<Seminario> getTurmas() {
+	public List<Seminario> getSeminarios() {
 		return seminarios;
 	}
 	
-	public void setTurmas(List<Seminario> seminarios) {
+	public void setSeminarios(List<Seminario> seminarios) {
 		this.seminarios = seminarios;
 	}	
 	
-	public Seminario getTurmaEditable() {
+	public Seminario getSeminarioEditable() {
 		return seminarioEditable;
 	}
 	
-	public void setTurmaEditable(Seminario seminarioEditable) {
+	public void setSeminarioEditable(Seminario seminarioEditable) {
 		this.seminarioEditable = seminarioEditable;
 	}
 }
