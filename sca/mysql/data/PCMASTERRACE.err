@@ -1,0 +1,6 @@
+2019-06-15T20:40:55.710439Z 0 [System] [MY-010116] [Server] C:\Users\Lyago\SpringWorkspace\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe (mysqld 8.0.12) starting as process 14740
+2019-06-15T20:40:55.710604Z 0 [ERROR] [MY-010338] [Server] Can't find error-message file 'C:\Users\Lyago\SpringWorkspace\PCS_SeminarioModulo\sca\mysql\share\errmsg.sys'. Check error-message file location and 'lc-messages-dir' configuration directive.
+2019-06-15T20:40:57.707381Z 0 [System] [MY-010229] [Server] Starting crash recovery...
+2019-06-15T20:40:57.713523Z 0 [System] [MY-010232] [Server] Crash recovery finished.
+2019-06-15T20:40:59.833581Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2019-06-15T20:40:59.993926Z 0 [System] [MY-010931] [Server] C:\Users\Lyago\SpringWorkspace\PCS_SeminarioModulo\sca\mysql\bin\mysqld.exe: ready for connections. Version: '8.0.12'  socket: ''  port: 3306  MySQL Community Server - GPL.
