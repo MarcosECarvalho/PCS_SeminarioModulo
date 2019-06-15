@@ -29,7 +29,8 @@
 							 
 				
 				<p:outputLabel value="Data *" />
-       			 <p:datePicker id="popup" value="#{bean.seminarioEditable.data}" />	
+       			 <!-- <p:datePicker id="popup" value="#{bean.seminarioEditable.data}" /> -->	
+       			 <p:calendar id="inline" value="#{bean.seminarioEditable.data}" mode="inline" />
 				             
 				<p:outputLabel value="Hora Início *" />
 				<p:inputMask mask="99:99" value="#{bean.seminarioEditable.horaInicio}"
