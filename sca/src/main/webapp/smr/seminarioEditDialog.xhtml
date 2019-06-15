@@ -30,7 +30,9 @@
 				
 				<p:outputLabel value="Data *" />
        			 <!-- <p:datePicker id="popup" value="#{bean.seminarioEditable.data}" /> -->	
-       			 <p:calendar id="inline" value="#{bean.seminarioEditable.data}" mode="inline" />
+       			 <p:calendar id="inline" value="#{bean.seminarioEditable.data}" mode="inline"
+       			 			 required="true" requiredMessage="A data é obrigatória." pattern="dd/MM/yyyy"
+       			 			 converter="#{localDateConverter}" converterMessage="Data inválida."/>
 				             
 				<p:outputLabel value="Hora Início *" />
 				<p:inputMask mask="99:99" value="#{bean.seminarioEditable.horaInicio}"
