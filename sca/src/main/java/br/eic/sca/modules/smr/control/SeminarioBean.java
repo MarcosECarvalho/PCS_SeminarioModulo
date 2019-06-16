@@ -90,9 +90,9 @@ public class SeminarioBean extends _Bean
 				return;
 			}
 			
-			if (seminarioEditable.getTitulo().length() > 45)
+			if (seminarioEditable.getTitulo().length() > 280)
 			{
-				popWarning("O título pode ter um máximo de 45 caracteres");
+				popWarning("O título pode ter um máximo de 280 caracteres");
 				refresh();
 				return;
 			}
