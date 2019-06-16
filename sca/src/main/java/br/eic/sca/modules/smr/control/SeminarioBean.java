@@ -1,5 +1,7 @@
 package br.eic.sca.modules.smr.control;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class SeminarioBean extends _Bean
 	//
 	List<Seminario> seminarios = new ArrayList<Seminario>();
 	Seminario seminarioEditable = new Seminario();
+	LocalDate today = LocalDate.now(ZoneId.of("Brazil/East"));
 	
 	//
 	// Inicialização dos Dados (Roda na construção do bean e no recarregamento da página)
@@ -109,6 +112,13 @@ public class SeminarioBean extends _Bean
 				}
 			}
 			
+			if (seminarioEditable.getData().isBefore(today)) {
+				popWarning("Data expirada");
+				refresh();
+				return;
+			}
+			
+			
 			
 			
 			// Periste o objeto
@@ -144,6 +154,15 @@ public class SeminarioBean extends _Bean
 		this.seminarioEditable = seminarioEditable;
 	}
 	
+	
+	public LocalDate getToday() {
+		return today;
+	}
+
+	public void setToday(LocalDate today) {
+		this.today = today;
+	}
+
 	//
 	// Métodos auxiliares de controle
 	//
@@ -171,6 +190,7 @@ public class SeminarioBean extends _Bean
 		}
 		return conflict;
 	}
+	
 }
 
 
