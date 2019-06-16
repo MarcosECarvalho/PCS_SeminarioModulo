@@ -117,10 +117,7 @@ public class SeminarioBean extends _Bean
 				refresh();
 				return;
 			}
-			
-			
-			
-			
+						
 			// Periste o objeto
 			seminarioService.persist(seminarioEditable);
 			
@@ -169,20 +166,23 @@ public class SeminarioBean extends _Bean
 	public boolean hasScheduleConflict(Seminario seminario) {
 		boolean conflict = false;
 		
+		// Checa se é no mesmo local e dia
 		if(seminario.getData().equals(seminarioEditable.getData()) 
 		   && seminario.getLocal().equalsIgnoreCase(seminarioEditable.getLocal())) {
 			
-			
+			// Checa se um seminário já cadastrado começa antes e termina depois do novo seminário
 			if( seminario.getHoraInicio().isBefore(seminarioEditable.getHoraInicio())
 					&& seminario.getHoraFim().isAfter(seminarioEditable.getHoraInicio())) {
 				conflict = true;
 			}
 			
+			// Checha se o novo seminário começa antes de um seminário terminar 
 			if( seminario.getHoraInicio().isBefore(seminarioEditable.getHoraFim())
 					&& seminario.getHoraFim().isAfter(seminarioEditable.getHoraFim())) {
 				conflict = true;
 			}
 			
+			// Checa se um seminário começa ou termina no mesmo horário que o novo seminário
 			if( seminario.getHoraInicio().equals(seminarioEditable.getHoraInicio())
 					|| seminario.getHoraFim().equals(seminarioEditable.getHoraFim())) {
 				conflict = true;
