@@ -52,7 +52,7 @@ public class Seminario implements Comparable<Seminario>
 	}
 
 	public void setLocal(String local) {
-		this.local = local;
+		this.local = local.trim();
 	}
 
 	public String getTitulo() {
@@ -61,7 +61,7 @@ public class Seminario implements Comparable<Seminario>
 	
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.titulo = titulo.trim();
 	}
 
 	public LocalDate getData() {

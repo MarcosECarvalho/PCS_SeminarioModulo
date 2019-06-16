@@ -77,9 +77,6 @@ public class SeminarioBean extends _Bean
 
 		try
 		{
-			//Trimming antes de persistir
-			seminarioEditable.setLocal(seminarioEditable.getLocal().trim());
-			seminarioEditable.setTitulo(seminarioEditable.getTitulo().trim());
 			
 			// Validações Complexas
 			if (seminarioEditable.getHoraInicio().isAfter(seminarioEditable.getHoraFim()) 
