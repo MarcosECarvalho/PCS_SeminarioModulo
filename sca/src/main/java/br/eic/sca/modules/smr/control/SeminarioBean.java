@@ -82,24 +82,28 @@ public class SeminarioBean extends _Bean
 					|| seminarioEditable.getHoraInicio().equals(seminarioEditable.getHoraFim()) )
 			{
 				popWarning("A hora de término deve ser após a hora de início");
+				refresh();
 				return;
 			}
 			
 			if (seminarioEditable.getTitulo().length() > 45)
 			{
 				popWarning("O título pode ter um máximo de 45 caracteres");
+				refresh();
 				return;
 			}
 			
 			if (seminarioEditable.getLocal().length() > 45)
 			{
 				popWarning("O local pode ter um máximo de 45 caracteres");
+				refresh();
 				return;
 			}
 			
 			for (Seminario seminario : seminarios) {
-				if(hasScheduleConflict(seminario)) {
+				if(hasScheduleConflict(seminario) && !seminario.equals(seminarioEditable)) {
 					popWarning("Conflito de horário. Já existe um seminário registrado nessa data, sala e nesse período de horário");
+					refresh();
 					return;
 				}
 			}
@@ -137,11 +141,15 @@ public class SeminarioBean extends _Bean
 		this.seminarioEditable = seminarioEditable;
 	}
 	
+	//
+	// Métodos auxiliares de controle
+	//
 	public boolean hasScheduleConflict(Seminario seminario) {
 		boolean conflict = false;
 		
 		if(seminario.getData().equals(seminarioEditable.getData()) 
 		   && seminario.getLocal().equals(seminarioEditable.getLocal())) {
+			
 			
 			if( seminario.getHoraInicio().isBefore(seminarioEditable.getHoraInicio())
 					&& seminario.getHoraFim().isAfter(seminarioEditable.getHoraInicio())) {
