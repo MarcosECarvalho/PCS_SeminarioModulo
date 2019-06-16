@@ -71,6 +71,12 @@ public class Seminario implements Comparable<Seminario>
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
+	
+	public String getDataFormated(){
+		
+		String[] dataArray = data.toString().split("-");
+		return dataArray[2]+"/"+dataArray[1]+"/"+dataArray[0];
+	}
 
 	public LocalTime getHoraInicio() {
 		return horaInicio;
