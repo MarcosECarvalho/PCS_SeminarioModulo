@@ -97,6 +97,13 @@ public class SeminarioBean extends _Bean
 				return;
 			}
 			
+			for (Seminario seminario : seminarios) {
+				if(hasScheduleConflict(seminario)) {
+					popWarning("Conflito de horário. Já existe um seminário registrado nessa data, sala e nesse período de horário");
+					return;
+				}
+			}
+			
 			// Periste o objeto
 			seminarioService.persist(seminarioEditable);
 			
@@ -128,6 +135,30 @@ public class SeminarioBean extends _Bean
 	
 	public void setSeminarioEditable(Seminario seminarioEditable) {
 		this.seminarioEditable = seminarioEditable;
+	}
+	
+	public boolean hasScheduleConflict(Seminario seminario) {
+		boolean conflict = false;
+		
+		if(seminario.getData().equals(seminarioEditable.getData()) 
+		   && seminario.getLocal().equals(seminarioEditable.getLocal())) {
+			
+			if( seminario.getHoraInicio().isBefore(seminarioEditable.getHoraInicio())
+					&& seminario.getHoraFim().isAfter(seminarioEditable.getHoraInicio())) {
+				conflict = true;
+			}
+			
+			if( seminario.getHoraInicio().isBefore(seminarioEditable.getHoraFim())
+					&& seminario.getHoraFim().isAfter(seminarioEditable.getHoraFim())) {
+				conflict = true;
+			}
+			
+			if( seminario.getHoraInicio().equals(seminarioEditable.getHoraInicio())
+					|| seminario.getHoraFim().equals(seminarioEditable.getHoraFim())) {
+				conflict = true;
+			}
+		}
+		return conflict;
 	}
 }
 
