@@ -74,12 +74,26 @@ public class SeminarioBean extends _Bean
 	
 	public void persist()
 	{
+
 		try
 		{
 			// Validações Complexas
-			if (seminarioEditable.getHoraInicio().isAfter(seminarioEditable.getHoraFim()))
+			if (seminarioEditable.getHoraInicio().isAfter(seminarioEditable.getHoraFim()) 
+					|| seminarioEditable.getHoraInicio().equals(seminarioEditable.getHoraFim()) )
 			{
 				popWarning("A hora de término deve ser após a hora de início");
+				return;
+			}
+			
+			if (seminarioEditable.getTitulo().length() > 45)
+			{
+				popWarning("O título pode ter um máximo de 45 caracteres");
+				return;
+			}
+			
+			if (seminarioEditable.getLocal().length() > 45)
+			{
+				popWarning("O local pode ter um máximo de 45 caracteres");
 				return;
 			}
 			
