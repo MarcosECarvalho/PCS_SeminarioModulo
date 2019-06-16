@@ -21,7 +21,7 @@ public class SmrModule extends ScaModule
 	{
 		return new Permission[] 
 		{
-			new Permission("Seminario", "Seminarios", "/smr/seminario.jsf" , "ADMIN")          			
+			new Permission("Seminário", "Seminários", "/smr/seminario.jsf" , "ADMIN")          			
 		};
 	}
 }
