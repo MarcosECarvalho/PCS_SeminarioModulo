@@ -30,22 +30,22 @@
 				</p:outputPanel>
 			</f:facet>
 			
-			<p:column style="width:30%" headerText="Titulo" sortBy="#{seminario.titulo}">
+			<p:column style="width:40%" headerText="Titulo" sortBy="#{seminario.titulo}">
 				<h:outputText value="#{seminario.titulo}" />
 			</p:column>
-			<p:column style="width:15%" headerText="Local" sortBy="#{seminario.local}">
+			<p:column style="width:15%; text-align:center" headerText="Local" sortBy="#{seminario.local}">
 				<h:outputText value="#{seminario.local}" />
 			</p:column>
-			<p:column style="width:15%" headerText="Data" sortBy="#{seminario.data}">
+			<p:column style="width:15%; text-align:center" headerText="Data" sortBy="#{seminario.data}">
 				<h:outputText value="#{seminario.data}" />
 			</p:column>
-			<p:column style="width:15%" headerText="Hora Início" sortBy="#{seminario.horaInicio}">
+			<p:column style="width:10%; text-align:center" headerText="Hora Início" sortBy="#{seminario.horaInicio}">
 				<h:outputText value="#{seminario.horaInicio}" />
 			</p:column>
-			<p:column style="width:15%" headerText="Hora Fim" sortBy="#{seminario.horaFim}">
+			<p:column style="width:10%; text-align:center" headerText="Hora Fim" sortBy="#{seminario.horaFim}">
 				<h:outputText value="#{seminario.horaFim}" />
 			</p:column>
-			<p:column style="width:5%">
+			<p:column style="width:5%; text-align:center">
 				<p:commandButton actionListener="#{bean.update(seminario)}" 
 								 icon="ui-icon ui-icon-pencil" 
 								 update="seminarioEditDialog" />
